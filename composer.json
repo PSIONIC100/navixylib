@@ -1,0 +1,25 @@
+{
+  "name": "telemovilperu/navixylib",
+  "description": "A Package to interact with Navixy API write in php.",
+  "keywords": ["navixy","telemovilperu","api","php"],
+  "type": "library",
+  "require": {
+    "php": "^7.1",
+    "guzzlehttp/guzzle": "^6.3",
+    "vlucas/phpdotenv": "^3.4"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "José Miguel Flores Huillcahua",
+      "email": "jmiguel.flores@telemovilperu.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Telemovilperu\\Navixylib\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
