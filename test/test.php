@@ -7,8 +7,8 @@ use Telemovilperu\Navixylib\Navixy;
 $api = new Navixy(dirname(__DIR__));
 echo $api->loginPanel();
 echo PHP_EOL;
-echo $api->loginUser(1);
+echo $api->loginUser(5);
 echo PHP_EOL;
-echo $api->getPosition(15,5);
+echo $api->getPosition(50,5);
 
 

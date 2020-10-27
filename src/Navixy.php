@@ -5,6 +5,7 @@ namespace Telemovilperu\Navixylib;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Dotenv\Dotenv;
+use Dotenv\Repository;
 
 class Navixy
 {
@@ -13,7 +14,12 @@ class Navixy
 
     public function __construct($dir)
     {
-        $env = Dotenv::create($dir);
+        $repository = Repository\RepositoryBuilder::createWithNoAdapters()
+        ->addAdapter(Repository\Adapter\EnvConstAdapter::class)
+        ->addWriter(Repository\Adapter\PutenvAdapter::class)
+        ->immutable()
+        ->make();
+        $env = Dotenv::create($repository, $dir);
         $env->load();
         $this->urlapi = getenv('PANEL_URL');
         $this->urlclient = getenv('CLIENT_URL');
